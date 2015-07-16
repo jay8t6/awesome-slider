@@ -1,9 +1,9 @@
-# &lt;awesome-slider/&gt;#
-
-![demo](http://i.imgur.com/KKN2hVG.gif)
+&lt;awesome-slider/&gt;
+=================
 
 The awesome-slider Vanilla JS custom element web component is a cool and clean option to quickly add a slider / banner / gallery to your web projects.
-=======================================================================================
+
+![demo](http://i.imgur.com/KKN2hVG.gif)
 
 ## Live demo
 
@@ -41,6 +41,10 @@ Install the component using [Bower](http://bower.io/):
 $ bower install awesome-slider --save
 ```
 Or [download the zip file](https://github.com/rcaferati/awesome-slider/archive/master.zip).
+
+## Discuss
+
+Join the discussion at the [article page](https://caferati.me/labs/awesome-slider)
 
 License
 -------
