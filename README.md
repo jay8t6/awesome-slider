@@ -3,11 +3,11 @@
 
 The awesome-slider Vanilla JS custom element web component is a cool option to quickly add a slider/banner/gallery to your web projects.
 
-![demo](http://i.imgur.com/KKN2hVG.gif)
-
 ## Live demo
 
 [Access the live demo here.](https://caferati.me/demo/awesome-slider)
+
+![demo](http://i.imgur.com/KKN2hVG.gif)
 
 ### Quick usage
 
