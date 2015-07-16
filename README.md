@@ -12,19 +12,16 @@ The awesome-slider Vanilla JS custom element web component is a cool option to q
 ### Quick usage
 
 1. Load the WebComponents polyfill:
-
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
 ```
 
 2. Import the custom element:
-
 ```html
 <link rel="import" href="/awesome-slider.html">
 ```
 
 3. Use it:
-
 ```html
 <awesome-slider pre-image="/images/logo.svg" autostart="true" bullets="true">
 	<item source="/images/image-1.jpg"></item>
