@@ -42,7 +42,7 @@ $ bower install awesome-slider --save
 ```
 Or [download the zip file](https://github.com/rcaferati/awesome-slider/archive/master.zip).
 
-## Discuss
+## Troubleshooting
 
 Join the discussion at the [article page](https://caferati.me/labs/awesome-slider)
 
