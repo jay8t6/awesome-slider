@@ -1,7 +1,6 @@
 # &lt;awesome-slider/&gt;#
 
-![awesome-slider](http://caferati.me/images/labs/awesome-slider/demo.gif)
-
+![demo](http://caferati.me/images/labs/awesome-slider/demo.gif)
 
 The awesome-slider Vanilla JS custom element web component is a cool and clean option to quickly add a slider / banner / gallery to your web projects.
 =======================================================================================
