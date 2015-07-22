@@ -7,9 +7,13 @@ The awesome-slider Vanilla JS custom element web component is a cool option to q
 
 [Access the live demo here.](https://caferati.me/demo/awesome-slider)
 
-![demo](http://i.imgur.com/KKN2hVG.gif)
+## Browser support
+
+![browser support](http://i.imgur.com/4bMmB5x.png)
 
 ### Quick usage
+
+![demo](http://i.imgur.com/KKN2hVG.gif)
 
 1. Load the WebComponents polyfill:
 
