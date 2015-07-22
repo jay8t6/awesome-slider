@@ -12,6 +12,7 @@
 		"slider",
 		"gallery",
 		"web component",
+		"web-components,
 		"custom element"
 	],
 	"ignore": [
