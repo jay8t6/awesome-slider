@@ -37,7 +37,7 @@ The awesome-slider Vanilla JS custom element web component is a cool option to q
 	</awesome-slider>
 	```
 
-## Install
+## Install or download
 
 Install the component using [Bower](http://bower.io/):
 
