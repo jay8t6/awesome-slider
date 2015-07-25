@@ -7,6 +7,8 @@ The awesome-slider Vanilla JS custom element web component is a cool option to q
 
 [Access the live demo here.](https://caferati.me/demo/awesome-slider)
 
+[![Example](http://i.imgur.com/j6JlUur.png)](https://caferati.me/demo/awesome-slider)
+
 ## Browser support
 
 ![browser support](http://i.imgur.com/4bMmB5x.png)
