@@ -1,6 +1,9 @@
 * {
 	margin: 0;
-	padding: 0
+	padding: 0;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body,
@@ -13,9 +16,17 @@ html {
 	font-size: 14px;
 }
 
+html, body, .container, .subContainer, .CodeMirror {
+	height: 100%;
+	width: 100%;
+}
+
 html{
 	overflow-x: hidden;
 	overflow-y: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html::-webkit-scrollbar {
@@ -76,7 +87,7 @@ main {
 section {
 	display: table-cell;
 	vertical-align: middle;
-	padding: 60px 0;
+	padding: 60px 15px;
 }
 
 awesome-button {
@@ -84,17 +95,12 @@ awesome-button {
 	min-height: 38px;
 	margin: 0;
 	color: rgba(0, 0, 0, 0);
-	margin: 0px 5px;
+	margin: 5px;
 }
 
 .examples {
 	display: block;
 	text-align: center;
-}
-
-.example awesome-button{
-	display: inline-block;
-	margin: 0px 5px;
 }
 
 awesome-slider{
@@ -248,4 +254,35 @@ ul.plugins{
 
 .html-wrapper .CodeMirror:nth-child(2){
 	height: auto;
+}
+
+.support{
+	display: block;
+	margin: -5px auto 24px;
+	max-width: 240px;
+	width: 90%;
+	cursor: help;
+}
+
+@media all and (max-width: 600px){
+	h1{
+		font-size: 28px;
+		line-height: 28px;
+	}
+	h2{
+		font-size: 18px;
+		line-height: 20px;
+	}
+	p{
+		font-size: 13px;
+	}
+	.code{
+		font-size: 12px;
+	}
+	github-fork{
+		display: none;
+	}
+	github-fork.fork-me{
+		display: block;
+	}
 }
