@@ -2,13 +2,13 @@
 	<style>
 		:host {
 			display: block;
-			width: 90%;
+			width: 100%;
 			position: relative;
-			max-width: 620px;
+			max-width: 100%;
 		}
 
 		.slider {
-			overflow: hidden;
+			/*overflow: hidden;*/
 			position: relative;
 		}
 
@@ -86,7 +86,7 @@
 		.controls.paused:before {
 			-webkit-transform: scale(1) rotate(0deg);
 			transform: scale(1) rotate(0deg);
-			opacity: 0.75;
+			opacity: 1;
 		}
 
 		.playing.controls.hidden:before {
@@ -643,56 +643,50 @@
 		var animationEvent = whichEvent("animation");
 		var transitionEvent = whichEvent("transition");
 
-		var Loader = (function () {
-			var im = new Image(),
-				loading = false,
-				callback = null,
-				ended = false,
-				vid = document.createElement("video");
-
-			vid.addEventListener("loadeddata", function () {
-				end(true);
+		var Loader = function () {
+			var self = this;
+			this.im = new Image(),
+			this.loading = false,
+			this.callback = null,
+			this.ended = false,
+			this.vid = document.createElement("video");
+			this.vid.addEventListener("loadeddata", function () {
+				self.end(true);
 			});
-
-			vid.addEventListener("error", function () {
-				end(false);
+			this.vid.addEventListener("error", function () {
+				self.end(false);
 			});
-
-			im.onload = function () {
-				end(true);
+			this.im.onload = function () {
+				self.end(true);
 			};
-			im.onerror = function () {
-				end(false);
+			this.im.onerror = function () {
+				self.end(false);
 			};
-
-			function end(success) {
-				if (ended) return;
-				ended = true;
-				if (callback) {
-					callback(im);
+		};
+		Loader.prototype.end = function(success){
+			if (this.ended) return;
+			this.ended = true;
+			if (this.callback) {
+				this.callback(this.im);
+			}
+		}
+		Loader.prototype.run = function(url, back){
+			var self = this;
+			this.loading = true;
+			this.ended = false;
+			this.callback = back || null;
+			if (url.match(/\.(mp4|webm)/i)) {
+				this.vid.setAttribute("src", url);
+				setTimeout(function () {
+					self.end(true);
+				}, 2000);
+			} else {
+				this.im.src = url;
+				if (this.im.width > 0) {
+					this.end(true, this.callback);
 				}
 			}
-
-			function run(url, back) {
-				loading = true;
-				ended = false;
-				callback = back || null;
-				if (url.match(/\.(mp4|webm)/i)) {
-					vid.setAttribute("src", url);
-					setTimeout(function () {
-						end(true);
-					}, 2000);
-				} else {
-					im.src = url;
-					if (im.width > 0) {
-						end(true, callback);
-					}
-				}
-			}
-			return {
-				run: run
-			}
-		})();
+		}
 
 		function updateItems(el) {
 			var nodes = el.content.getDistributedNodes();
@@ -866,6 +860,7 @@
 				endLoading(el, index, dir);
 			}
 			var ldr = document.createElement("div");
+			var loader = new Loader();
 			ldr.className = "ldr";
 			el.current.appendChild(ldr);
 
@@ -879,7 +874,7 @@
 				el.current.offsetHeight;
 				window.requestAnimationFrame(function () {
 					el.current.classList.add("loading");
-					Loader.run(el.items[index].src, function (img) {
+					loader.run(el.items[index].src, function (img) {
 						if (img.height > img.width) {
 							el.items[index].portrait = true;
 						}
@@ -999,7 +994,7 @@
 				el.position.x = null;
 				el.position.y = null;
 			});
-			el.container.appendChild(el.nav);
+			el.figure.appendChild(el.nav);
 		}
 
 		function checkStart(el) {
