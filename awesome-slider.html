@@ -442,6 +442,10 @@
 			background-color: #009688;
 		}
 
+		.c-teal .current .ldr {
+			background-color: #009688;
+		}
+
 		.c-teal .bullets button:after {
 			background-color: #009688;
 		}
@@ -454,6 +458,10 @@
 		.c-red .a-left:before,
 		.c-red .a-right:after,
 		.c-red .a-right:before {
+			background-color: #F44336;
+		}
+
+		.c-red .current .ldr {
 			background-color: #F44336;
 		}
 
@@ -472,6 +480,10 @@
 			background-color: #2196F3;
 		}
 
+		.c-blue .current .ldr {
+			background-color: #2196F3;
+		}
+
 		.c-blue .bullets button:after {
 			background-color: #2196F3;
 		}
@@ -484,6 +496,10 @@
 		.c-pink .a-left:before,
 		.c-pink .a-right:after,
 		.c-pink .a-right:before {
+			background-color: #E91E63;
+		}
+
+		.c-pink .current .ldr {
 			background-color: #E91E63;
 		}
 
@@ -502,6 +518,10 @@
 			background-color: #673AB7;
 		}
 
+		.c-purple .current .ldr {
+			background-color: #673AB7;
+		}
+
 		.c-purple .bullets button:after {
 			background-color: #673AB7;
 		}
@@ -517,6 +537,10 @@
 			background-color: #607D8B;
 		}
 
+		.c-grey .current .ldr {
+			background-color: #607D8B;
+		}
+
 		.c-grey .bullets button:after {
 			background-color: #607D8B;
 		}
@@ -525,10 +549,33 @@
 			background-color: #37474F;
 		}
 
+		.c-brown .a-left:after,
+		.c-brown .a-left:before,
+		.c-brown .a-right:after,
+		.c-brown .a-right:before {
+			background-color: #a98253;
+		}
+
+		.c-brown .current .ldr {
+			background-color: #a98253;
+		}
+
+		.c-brown .bullets button:after {
+			background-color: #a98253;
+		}
+
+		.c-brown .bullets button:before {
+			background-color: #6d5436;
+		}
+
 		.c-orange .a-left:after,
 		.c-orange .a-left:before,
 		.c-orange .a-right:after,
 		.c-orange .a-right:before {
+			background-color: #FF5722;
+		}
+
+		.c-orange .current .ldr {
 			background-color: #FF5722;
 		}
 
@@ -1044,7 +1091,7 @@
 
 		function checkColor(el) {
 			var color = el.getAttribute("color");
-			if (typeof color === "string" && color.match(/^(teal|red|blue|pink|purple|grey|orange)$/)) {
+			if (typeof color === "string" && color.match(/^(teal|red|blue|pink|purple|grey|brown|orange)$/)) {
 				el.container.className = el.container.className.replace(/c\-[a-z]/, "").trim();
 				el.container.classList.add("c-" + color);
 			} else {
