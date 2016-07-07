@@ -1141,6 +1141,13 @@
 			el.content = el.shadow.querySelector("content");
 			el.container = el.shadow.querySelector(".slider");
 			el.class = "slider";
+			el.rotate = el.getAttribute("rotate") || false;
+			el.duration = el.getAttribute("duration") || 3000;
+			if (el.rotate) {
+				setInterval(function(){
+					el.next();
+				}, el.duration);
+			}
 		}
 		var mainDoc = document,
 			thisDoc = (mainDoc._currentScript || mainDoc.currentScript).ownerDocument,
